@@ -1,2 +1,6 @@
 # RedrawnDownload
-A website to download Redrawn (Github pages)
+Comming Soon
+
+## Website info:
+will be under heavy maintanance
+
