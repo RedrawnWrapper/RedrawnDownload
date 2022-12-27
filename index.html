@@ -43,10 +43,11 @@
 		<script type="text/javascript">
 			var I18N_LANG = 'en_US';
 			var GT = new Gettext({'locale_data': json_locale_data});
-			let currentDate = new Date();
-			let cYear = currentDate.getFullYear();
-			document.getElementById("CopyrightYear").innerHTML = `&nbsp;&nbsp;&nbsp;
-                    Redrawn © ${cYear}`;
+			function getYear() {
+				let currentDate = new Date();
+				let cYear = currentDate.getFullYear();
+				document.getElementById("CopyrightYear").innerHTML = `&nbsp;&nbsp;&nbsp; Redrawn © ${cYear}`;
+			}
 		</script>
 
 		<script src="static/a0cbfe8e1f619bcc/go/js/jquery/jquery.waypoints2.min.js"></script>
@@ -57,7 +58,7 @@
 		<link href="/RedrawnDownload/" rel="publisher">
 
 	</head>
-	<body>
+	<body onload="getYear()">
 		<div class="page-container">
 
 			<!-- HEADER -->
