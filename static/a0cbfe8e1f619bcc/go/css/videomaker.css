@@ -45,12 +45,12 @@
 }
 
 .vm-tutorial-trigger .on {
-	background: transparent url(/RedrawnDownload/static/a0cbfe8e1f619bcc/go/img/videomaker/arrow_expand.jpg) no-repeat center 24px;
+	background: transparent url(/RedrawnDownload/static/a0cbfe8e1f619bcc/go/img/videomaker/arrow_expand.png) no-repeat center 24px;
 	padding-bottom: 15px
 }
 
 .vm-tutorial-trigger .off {
-	background: transparent url(/RedrawnDownload/static/a0cbfe8e1f619bcc/go/img/videomaker/arrow_close.jpg) no-repeat center 6px;
+	background: transparent url(/RedrawnDownload/static/a0cbfe8e1f619bcc/go/img/videomaker/arrow_close.png) no-repeat center 6px;
 	padding-top: 15px;
 	display: none
 }
