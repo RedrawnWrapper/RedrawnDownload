@@ -51,7 +51,10 @@
 			var loggedIn = false;
 			fetch('https://redrawn-beta.joseph-animate.repl.co/userInfo').then(data => {
 				data.json().then(user => {
-					if (user) loggedIn = true;
+					if (user) {
+						document.getElementById('login_button').style.display = 'none';
+						loggedIn = true;
+					}
 				});
 			});
 			function goto(url) {
