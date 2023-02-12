@@ -62,6 +62,26 @@
 					else alert('You can then download Redrawn instead or use GoWDPK (https://gowdpk.ga/)');
 				}
 			}
+			function openLoginWindow() {
+				window.addEventListener('message', authComplete);
+				var h = 500;
+				var w = 350;
+				var left = screen.width / 2 - w / 2;
+				var top = screen.height / 2 - h / 2;
+
+				var authWindow = window.open(
+					'https://repl.it/auth_with_repl_site?domain=redrawn-beta.joseph-animate.repl.co',
+					'_blank',
+					'modal =yes, toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left,
+				);
+
+				function authComplete(e) {
+					if (e.data !== 'auth_complete') return;
+					window.removeEventListener('message', authComplete);
+					authWindow.close();
+					location.reload();
+				}
+			}
 		</script>
 
 		<script src="static/a0cbfe8e1f619bcc/go/js/jquery/jquery.waypoints2.min.js"></script>
@@ -91,6 +111,7 @@
 					<ul id="top-nav" class="top-nav collapse">
 						<li><a href="https://github.com/RedrawnWrapper/Redrawn-Installer/archive/main.zip">Download The Installer (Recomended)</a></li>
 						<li><a href="https://github.com/RedrawnWrapper/Redrawn-Installer#install-intructions">Download Instructions</a></li>
+						<li id="login_button"><a href="javascript:;" onclick="openLoginWindow()">Login (Redrawn Online)</a></li>
 						<li class="top-nav-vm-btn">
 							<span><a class="btn btn-blue" href="https://github.com/RedrawnWrapper/Redrawn-Express/archive/main.zip">Download Now!</a></span>
 						</li>
