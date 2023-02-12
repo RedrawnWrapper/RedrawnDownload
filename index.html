@@ -48,42 +48,10 @@
 				let cYear = currentDate.getFullYear();
 				document.getElementById("CopyrightYear").innerHTML = `&nbsp;&nbsp;&nbsp; Redrawn © ${cYear}`;
 			}
-			var loggedIn = false;
-			fetch('https://redrawn-beta.joseph-animate.repl.co/userInfo').then(data => {
-				data.json().then(user => {
-					if (user) {
-						console.log(user);
-						document.getElementById('login_button').style.display = 'none';
-						loggedIn = true;
-					}
-				});
-			});
 			function goto(url) {
-				if (loggedIn) location.href = url;
-				else {
-					const yesorno = confirm(`You need to be logged into your replit account in order to be redirected to ${url}. are you sure that you want to proceed anyway?`);
-					if (!yesorno) alert('You can then download Redrawn instead or use GoWDPK (https://gowdpk.ga/)');
-				}
-			}
-			function openLoginWindow() {
-				window.addEventListener('message', authComplete);
-				var h = 500;
-				var w = 350;
-				var left = screen.width / 2 - w / 2;
-				var top = screen.height / 2 - h / 2;
-
-				var authWindow = window.open(
-					'https://repl.it/auth_with_repl_site?domain=redrawn-beta.joseph-animate.repl.co',
-					'_blank',
-					'modal =yes, toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left,
-				);
-
-				function authComplete(e) {
-					if (e.data !== 'auth_complete') return;
-					window.removeEventListener('message', authComplete);
-					authWindow.close();
-					location.reload();
-				}
+				const yesorno = confirm(`You need to be logged into your replit account in order to be redirected to ${url}. are you sure that you want to proceed anyway?`);
+				if (yesorno) location.href = url
+				else alert('You can then download Redrawn instead or use GoWDPK (https://gowdpk.ga/)');
 			}
 		</script>
 
@@ -162,7 +130,7 @@
 			<div class="plans">
 				<div class="container">
 					<span>Having Trouble Downloading Redrawn?</span>
-					<a class="btn btn-large btn-dark" href="https://redrawn-beta.joseph-animate.repl.co/" onclick="goto('https://redrawn-beta.joseph-animate.repl.co/')">Try Redrawn Online Today!</a>
+					<a class="btn btn-large btn-dark" onclick="goto('https://redrawn-beta.joseph-animate.repl.co/')">Try Redrawn Online Today!</a>
 				</div>
 			</div>
 			
