@@ -49,9 +49,7 @@
 				document.getElementById("CopyrightYear").innerHTML = `&nbsp;&nbsp;&nbsp; Redrawn © ${cYear}`;
 			}
 			function goto(url) {
-				const yesorno = confirm(`You need to be logged into your replit account in order to be redirected to ${url}. are you sure that you want to proceed anyway?`);
-				if (yesorno) location.href = url
-				else alert('You can then download Redrawn instead or use GoWDPK (https://gowdpk.ga/)');
+				location.href = url
 			}
 		</script>
 
@@ -129,7 +127,7 @@
 			<div class="plans">
 				<div class="container">
 					<span>Having Trouble Downloading Redrawn?</span>
-					<a class="btn btn-large btn-dark" onclick="goto('https://redrawn-beta.joseph-animate.repl.co/')">Try Redrawn Online Today!</a>
+					<a class="btn btn-large btn-dark" onclick="goto('https://app.redrawn.cf/')">Try Redrawn Online Today!</a>
 				</div>
 			</div>
 			
